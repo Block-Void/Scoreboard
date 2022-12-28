@@ -1,0 +1,302 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Bahnschrift;
+    font-weight: 800;
+}
+
+
+#main {
+    display: flex;
+}
+
+/* Scoreboard [Start] */
+.scoreboard {
+    background-color: rgb(127, 127, 127);
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* Bar [Start] */
+.bar {
+    display: flex;
+    height: 80px;
+    border-bottom: 2px solid black;
+    padding-left: 15px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(195, 195, 195);
+    font-size: 50px;
+}
+
+/* Hamburger Menu [Start] */
+.menu {
+    position: absolute;
+    z-index: 5;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 35px;
+    width: 60px;
+}
+
+#menu {
+    position: absolute;
+}
+
+.menu-items {
+    transform: translate(-150%);
+    transition: transform 0.5s ease-in-out;
+    font-size: 30px;
+    width: 200px;
+    padding-bottom: 404px;
+    padding-top: 25px;
+    padding-left: 50px;
+    border: none;
+    border-right: 2px solid black;
+    background-color: rgb(195, 195, 195);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+    gap: 10px;
+}
+
+.menu-items div:hover {
+    color:slategray;
+    cursor: pointer;
+}
+
+.checkbox {
+    opacity: 0;
+    z-index: 6;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3px;
+    max-width: 45px;
+    padding: 5px 0px;
+    border-radius: 10px;
+    background-color: rgb(195, 195, 195);
+}
+
+.line1 {
+    transform-origin: 0% 0%;
+    transition: transform, background-color, 0.4s ease-in-out;
+}
+
+.line2 {
+    transition: transform 0.2s ease-in-out;
+}
+
+.line3 {
+    transform-origin: 0% 100%;
+    transition: transform, background-color, 0.4s ease-in-out;
+}
+
+#menu input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+
+}
+
+#menu input[type="checkbox"]:checked ~ .menu .line1 {
+    transform: rotate(40deg);
+    background-color: rgb(127, 127, 127);
+}
+
+#menu input[type="checkbox"]:checked ~ .menu .line2 {
+    transform: scaleY(0);
+}
+
+#menu input[type="checkbox"]:checked ~ .menu .line3 {
+    transform: rotate(-40deg);
+    background-color: rgb(127, 127, 127);
+}
+/* Hamburger Menu [End] */
+/* Bar [End] */
+
+/* Home Team, Timer, Away Team [Start] */
+#top {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+}
+
+#home, #timer, #away {
+    color: rgb(195, 195, 195);
+    padding: 15px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.homescore, .awayscore, 
+.timer {
+    color: black;
+    font-size: 100px;
+    background-color:rgb(195, 195, 195);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.homescore, .awayscore {
+    padding: 20px 130px;
+}
+
+.timer {
+    display: flex;
+    padding: 20px 20px;
+}
+/* Home Team, Timer, Away Team [End] */
+
+
+/* Home Sets, Period, Away Sets [Start] */
+#bottom {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding: 15px;
+}
+
+#set, #period {
+    color: rgb(195, 195, 195);
+    padding: 15px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.homeset, .awayset, 
+.period {
+    display: flex;
+    padding: 20px 80px;
+    color: black;
+    font-size: 100px;
+    background-color: rgb(195, 195, 195);
+    border-radius: 15px;
+    text-align: center;
+}
+/* Home Sets, Period, Away Sets [End] */
+/* Scoreboard [End] */
+
+
+/* Pointboard [Start] */
+.pointboard {
+    background-color: rgb(195, 195, 195);
+    width: 200px;
+    min-height: 100%;
+    flex-grow: 1;
+    border-left: 2px solid;
+}
+
+#above {
+    border-bottom: 2px solid;
+    padding-bottom: 15px;
+}
+#below {
+    padding-bottom: 75px;
+}
+
+button, #save {
+    cursor: pointer;
+}
+
+/* Input Name [Start] */
+.teamnamehome, .teamnameaway,
+#timeset, #pointhome, 
+#pointaway, #pointperiod,
+#sets {
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.inputhome, .inputaway {
+    border-radius: 15px;
+    max-width: 80%;
+    border: none;
+}
+/* Input Name [End] */
+
+#timeset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.timeset {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+}
+
+#text {
+    display: flex;
+    gap: 20px;
+}
+
+.text {
+    font-size: 15px;
+}
+
+.minuteset, .secondset {
+    max-width: 40px;
+    border-radius: 5px;
+    border: 2px solid;
+}
+
+.timerbutton {
+    max-width: 40%;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.button {
+    display: flex;
+    gap: 5px;
+}
+
+#pointhome, #pointaway, 
+#pointperiod, #homeset, 
+#awayset {
+    display: flex;
+    flex-direction: column;
+}
+
+.pointhome, .pointaway, 
+.pointperiod, .pointsethome,
+.pointsetaway {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.buttonhome, .buttonaway, 
+.buttonperiod, .btnhomeset,
+.btnawayset {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#homeset, #awayset {
+    font-size: 15px;
+    text-align: center;
+}
+
+#save {
+    border-top: 2px solid;
+    padding: 5px 60px;
+    text-align: center;
+    font-size: 25px;
+    background-color: wsecondte;
+}
+
+/* Pointboard [End] */
