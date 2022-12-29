@@ -105,75 +105,54 @@ function subtract(subtract) {
 // subtract home score, away score, home set, period, away set [End]
 
 let minuteset, secondset;
+minuteset = document.querySelector(".minuteset");
+secondset = document.querySelector(".secondset");
 
 let set = document.querySelector(".set");
 
 set.onclick = function() {
-    minuteset = document.querySelector(".minuteset").value;
-    secondset = document.querySelector(".secondset").value;
-    if(minuteset < 10) {
-        document.querySelector(".minute").textContent = String("0" + minuteset);
-        timer = false;
-        start2 = 1;
 
-        if(minuteset == "") {
-            document.querySelector(".minute").textContent = "00";
-        }
+    minuteset = minuteset.value;
+    secondset = secondset.value;
     
-    } else {
-        document.querySelector(".minute").textContent = minuteset;
-    }
-
-    if(secondset < 10) {
-        document.querySelector(".second").textContent = String("0" + secondset);
+    if(start2 == 0){
         timer = false;
         start2 = 1;
+    } else {
+        timer = false;
+        start2 = 1;
+        if(minuteset < 10) {
+            minute.textContent = String("0" + minuteset);
+    
+            if(minuteset == "") {
+                minute.textContent = "00";
+            }
         
-        if(secondset == "") {
-            document.querySelector(".second").textContent = "00";
+        } else {
+            minute.textContent = minuteset;
         }
     
-    } else {
-        document.querySelector(".second").textContent = secondset;
+        if(secondset < 10) {
+            second.textContent = String("0" + secondset);
+            
+            if(secondset == "") {
+                second.textContent = "00";
+            }
+        
+        } else {
+            second.textContent = secondset;
+        }
     }
+
+    
 }
 
-/*
-minset.addEventListener("keypress", function(event) {
-    minuteset = document.querySelector(".minuteset").value;
-    minute = document.querySelector(".minute").innerHTML;
-
-    if (event.key == "Enter") {
-        if(minuteset < 10) {
-            minute = String("0" + minuteset);
-            timer = false;
-            start2 = 1;
-           
-        } else {
-            minute = minuteset;
-        }
-    }
-});
-
-secset.addEventListener("keypress", function(event) {
-    secondset = document.querySelector(".secondset").value;
-    second = document.querySelector(".second").innerHTML;
-    
-    if (event.key == "Enter") {
-        if(secondset < 10) {
-            second = String("0" + secondset);
-            timer = false;
-            start2 = 1;
-        } else {
-            second = secondset;
-        }
-    }
-});
-*/
 
 //Countdown Timer
 let start, start2, pause, reset, timer, minute, second, timeout;
 
+minute = document.querySelector(".minute");
+second = document.querySelector(".second");
 
 timer = false;
 start2 = 1;
@@ -205,17 +184,9 @@ reset.onclick = function() {
     if(start2 == 0 || start2 == 1){
         timer = false;
         start2 = 1;
+        minute.innerHTML = minuteset.value;
+        second.innerHTML = secondset.value;
     }
-
-    let minute = document.querySelector(".minute");
-    minuteset = document.querySelector(".minuteset");
-    minuteset.value = 0;
-    minute.innerHTML = "00";
-
-    second = document.querySelector(".second");
-    secondset = document.querySelector(".secondset");
-    secondset.value = 0;
-    second.innerHTML = "00";
 }
 
 function countdowntimer() {
@@ -224,45 +195,40 @@ function countdowntimer() {
     if (timer) {
         // Condition when the timer stops [Start]
 
-
-        
-
         if(minuteset > 0 || secondset > 0) {
-            second--;
             secondset--;
         }
         
         // [End]
 
-        // condition in minute [Start]
+        // minute timer
         if(secondset < 0) {
-            minute--;
             minuteset--;
-            second = 59;
             secondset = 59;
         }
         // [End]
 
         // Add number 0 when lower than 10 [Ex. 09]
-        let minString = minuteset;
-        let secString = secondset;
-        if (minuteset < 10) {
-            minString = "0" + minString;
-        } else if (minuteset == "") {
-            minString = "00";
-        }
+        toString(minuteset, minute);
+        toString(secondset, second);
 
-        if (secondset < 10) {
-            secString = "0" + secString;
-        } else if (secondset == "") {
-            secString = "00";
+        function toString(string, time) {
+            let timeString = string;
+            if(string < 10) {
+                timeString = "0" + timeString;
+            } else if(string == "") {
+                timeString == "00";
+            }
+
+            if (secondset < 10 && minuteset == "") {
+                minute.textContent = "00";
+            }
+            // View [Start]
+            time.textContent = timeString;
+            // [End]
         }
         // [End]
 
-        // View [Start]
-        document.querySelector(".minute").textContent = minString;
-        document.querySelector(".second").textContent = secString;
-        // [End]
 
         // Loops and limit
         if(start2 == 0) {
@@ -270,3 +236,4 @@ function countdowntimer() {
         }
     }
 }
+

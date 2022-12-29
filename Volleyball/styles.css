@@ -152,7 +152,8 @@
 
 .timer {
     display: flex;
-    padding: 20px 20px;
+    padding: 20px 50px;
+    text-size-adjust: none;
 }
 /* Home Team, Timer, Away Team [End] */
 
@@ -203,7 +204,7 @@
     padding-bottom: 75px;
 }
 
-button, #save {
+button, #print {
     cursor: pointer;
 }
 
@@ -291,7 +292,7 @@ button, #save {
     text-align: center;
 }
 
-#save {
+#print {
     border-top: 2px solid;
     padding: 5px 60px;
     text-align: center;
