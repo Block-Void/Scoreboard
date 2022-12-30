@@ -1,65 +1,65 @@
-// input home name and away name [Start]
-let inputhome, inputaway, 
-    homename, awayname; 
+// inputs for home name and away name [Start]
+let inputHome, inputAway, 
+    homeName, awayName; 
 
-inputhome = document.querySelector(".inputhome");
-inputhome.addEventListener("keypress", function changeHomeName(event) {
-    inputhome = document.querySelector(".inputhome").value;
-    homename = document.querySelectorAll(".homename");
+inputHome = document.querySelector(".inputhome");
+inputHome.addEventListener("keypress", function changeHomeName(event) {
+    inputHome = document.querySelector(".inputhome").value;
+    homeName = document.querySelectorAll(".homename");
 
     if (event.key === "Enter") {
-        for(let i = 0; i < homename.length; i++){
-            homename[i].innerHTML = inputhome;
+        for(let i = 0; i < homeName.length; i++){
+            homeName[i].innerHTML = inputHome;
         }
     }
 });
 
-inputaway = document.querySelector(".inputaway");
-inputaway.addEventListener("keypress", function changeAwayName(event) {
-    inputaway = document.querySelector(".inputaway").value;
-    awayname = document.querySelectorAll(".awayname");
+inputAway = document.querySelector(".inputaway");
+inputAway.addEventListener("keypress", function changeAwayName(event) {
+    inputAway = document.querySelector(".inputaway").value;
+    awayName = document.querySelectorAll(".awayname");
 
     if(event.key === "Enter") {
-        for(let i = 0; i < awayname.length; i++){
-            awayname[i].innerHTML = inputaway;
+        for(let i = 0; i < awayName.length; i++){
+            awayName[i].innerHTML = inputAway;
         }
     }
 });
-// input home name and away name [End]
+// inputs for home name and away name [End]
 
-// add home score, away score, home set, period, and away set [Start]
-let homeadd, homesubtract, homescore, homeset, homesetadd, homesetsubtract,
-    awayadd, awaysubtract, awayscore, awayset, awaysetadd, awaysetsubtract,
-    periodadd, periodsubtract, period, toNum;
+// add 1 in home score, away score, home set, period, and away set [Start]
+let homeAdd, homeSubtract, homeScore, homeSet, homeSetAdd, homeSetSubtract,
+    awayAdd, awaySubtract, awayScore, awaySet, awaySetAdd, awaySetSubtract,
+    periodAdd, periodSubtract, period, toNum;
 
-homeadd = document.querySelector(".homescoreadd");
-awayadd = document.querySelector(".awayscoreadd");
-homesetadd = document.querySelector(".homesetadd");
-awaysetadd = document.querySelector(".awaysetadd");
-periodadd = document.querySelector(".periodadd");
-homescore = document.querySelector(".homescore");
-awayscore = document.querySelector(".awayscore");
-homeset = document.querySelector(".homeset");
-awayset = document.querySelector(".awayset");
+homeAdd = document.querySelector(".homescoreadd");
+awayAdd = document.querySelector(".awayscoreadd");
+homeSetAdd = document.querySelector(".homesetadd");
+awaySetAdd = document.querySelector(".awaysetadd");
+periodAdd = document.querySelector(".periodadd");
+homeScore = document.querySelector(".homescore");
+awayScore = document.querySelector(".awayscore");
+homeSet = document.querySelector(".homeset");
+awaySet = document.querySelector(".awayset");
 period = document.querySelector(".period");
 
 
-homeadd.onclick = function() {
-    add(homescore);
+homeAdd.onclick = function() {
+    add(homeScore);
 }
-homesetadd.onclick = function() {
-    add(homeset);
-}
-
-awayadd.onclick = function() {
-    add(awayscore);
+homeSetAdd.onclick = function() {
+    add(homeSet);
 }
 
-awaysetadd.onclick = function() {
-    add(awayset);
+awayAdd.onclick = function() {
+    add(awayScore);
 }
 
-periodadd.onclick = function() {
+awaySetAdd.onclick = function() {
+    add(awaySet);
+}
+
+periodAdd.onclick = function() {
     add(period);
 }
 function add(add){
@@ -67,30 +67,33 @@ function add(add){
     toNum = Number(add.textContent) + 1;
     add.innerHTML = String(toNum);
 }
+// add 1 in home score, away score, home set, period, and away set [End]
 
-// add home score, away score, home set, period, and away set [End]
-
-// subtract home score, away score, home set, period and away set [Start]
-homesubtract = document.querySelector(".homescoresubtract");
-awaysubtract = document.querySelector(".awayscoresubtract");
-homesetsubtract = document.querySelector(".homesetsubtract");
-awaysetsubtract = document.querySelector(".awaysetsubtract");
-periodsubtract = document.querySelector(".periodsubtract");
+// subtract 1 in home score, away score, home set, period and away set [Start]
+homeSubtract = document.querySelector(".homescoresubtract");
+awaySubtract = document.querySelector(".awayscoresubtract");
+homeSetSubtract = document.querySelector(".homesetsubtract");
+awaySetSubtract = document.querySelector(".awaysetsubtract");
+periodSubtract = document.querySelector(".periodsubtract");
 
 
-homesubtract.onclick = function() {
-    subtract(homescore);
+homeSubtract.onclick = function() {
+    subtract(homeScore);
 }
-awaysubtract.onclick = function() {
-    subtract(awayscore);
+
+awaySubtract.onclick = function() {
+    subtract(awayScore);
 }
-homesetsubtract.onclick = function() {
-    subtract(homeset);
+
+homeSetSubtract.onclick = function() {
+    subtract(homeSet);
 }
-awaysetsubtract.onclick = function() {
-    subtract(awayset);
+
+awaySetSubtract.onclick = function() {
+    subtract(awaySet);
 }
-periodsubtract.onclick = function() {
+
+periodSubtract.onclick = function() {
     subtract(period);
 }
 
@@ -102,76 +105,85 @@ function subtract(subtract) {
         subtract.innerHTML = "0";
     }
 }
-// subtract home score, away score, home set, period, away set [End]
+// subtract 1 home score, away score, home set, period, away set [End]
 
-let minuteset, secondset;
-minuteset = document.querySelector(".minuteset");
-secondset = document.querySelector(".secondset");
+// set minute or second in timer [Start]
+let minuteSet, secondSet, minSetValue, secSetValue;
+minuteSet = document.querySelector(".minuteset");
+secondSet = document.querySelector(".secondset");
+
+document.querySelector(".minuteset").addEventListener("change", function(){
+    let time = parseInt(this.value);
+    if(time < 0) {
+        this.value = 0;
+    }
+    if(time > 60) {
+        this.value = 60;
+    }
+});
+
+document.querySelector(".secondset").addEventListener("change", function(){
+    let time = parseInt(this.value);
+    if(time < 0) {
+        this.value = 0;
+    }
+    if(time > 60) {
+        this.value = 59;
+    }
+});
 
 let set = document.querySelector(".set");
-
 set.onclick = function() {
-
-    minuteset = minuteset.value;
-    secondset = secondset.value;
-    
-    if(start2 == 0){
-        timer = false;
-        start2 = 1;
-    } else {
-        timer = false;
-        start2 = 1;
-        if(minuteset < 10) {
-            minute.textContent = String("0" + minuteset);
-    
-            if(minuteset == "") {
+    if(start2 == 0 && timer == false) {
+        minSetValue = minuteSet.value;
+        secSetValue = secondSet.value;
+        
+        if(minSetValue < 10) {
+            minute.textContent = String("0" + minSetValue);
+            if(minSetValue == "") {
                 minute.textContent = "00";
             }
-        
         } else {
-            minute.textContent = minuteset;
+            minute.textContent = minSetValue;
         }
     
-        if(secondset < 10) {
-            second.textContent = String("0" + secondset);
-            
-            if(secondset == "") {
+        if(secSetValue < 10) {
+            second.textContent = String("0" + secSetValue);
+            if(secSetValue == "") {
                 second.textContent = "00";
             }
-        
         } else {
-            second.textContent = secondset;
+            second.textContent = secSetValue;
         }
     }
-
-    
 }
+// set minute or second in timer [End]
 
-
-//Countdown Timer
+// Countdown Timer Buttons start, pause, and reset [Start]
 let start, start2, pause, reset, timer, minute, second, timeout;
 
 minute = document.querySelector(".minute");
 second = document.querySelector(".second");
 
 timer = false;
-start2 = 1;
+start2 = 0;
+
 start = document.querySelector(".start");
 start.onclick = function() {
-
-    if(start2 == 1){
-        start2 = 0;
+    if(start2 == 0){
+        start2 = 1;
         timer = true;
-	    countdowntimer();
+	    countDownTimer();
     } else {
         timer = true;
     }
 }
+
 pause = document.querySelector(".pause");
 pause.onclick = function() {
-    if(start2 == 0){
+    if(start2 == 1){
         timer = false;
-        start2 = 1;
+        start2 = 0;
     } else {
         timer = true;
     }
@@ -179,38 +191,55 @@ pause.onclick = function() {
 
 reset = document.querySelector(".reset");
 reset.onclick = function() {
+    if(confirm("Are you sure this will reset your timer!")){
+        if(start2 == 0 || start2 == 1){
+            timer = false;
+            start2 = 0;
+            minSetValue = document.querySelector(".minuteset").value;
+            secSetValue = document.querySelector(".secondset").value;
 
-    
-    if(start2 == 0 || start2 == 1){
-        timer = false;
-        start2 = 1;
-        minute.innerHTML = minuteset.value;
-        second.innerHTML = secondset.value;
+            if(minSetValue < 10) {
+                minute.textContent = String("0" + minSetValue);
+                if(minSetValue == "") {
+                    minute.textContent = "00";
+                }
+            } else {
+                minute.textContent = minSetValue;
+            }
+        
+            if(secSetValue < 10) {
+                second.textContent = String("0" + secSetValue);
+                if(secSetValue == "") {
+                    second.textContent = "00";
+                }
+            } else {
+                second.textContent = secSetValue;
+            }
+        }
     }
 }
+// Countdown Timer Buttons start, pause, and reset  [End]
 
-function countdowntimer() {
+// Timer Function [Start]
+function countDownTimer() {
     clearTimeout(timeout);
-    
     if (timer) {
-        // Condition when the timer stops [Start]
-
-        if(minuteset > 0 || secondset > 0) {
-            secondset--;
+        // Countdown until both second and minute is zero [Start]
+        if(minSetValue > 0 || secSetValue > 0) {
+            secSetValue--;
         }
-        
-        // [End]
+        // Countdown until both second and minute is zero [End]
 
-        // minute timer
-        if(secondset < 0) {
-            minuteset--;
-            secondset = 59;
+        // Condition for when the minute decreased by one [Start]
+        if(secSetValue < 0) {
+            minSetValue--;
+            secSetValue = 59;
         }
-        // [End]
+        // Condition for when the minute decreased by one [End]
 
-        // Add number 0 when lower than 10 [Ex. 09]
-        toString(minuteset, minute);
-        toString(secondset, second);
+        // Add number 0 when lower than 10 |Ex. 09| [Start]
+        toString(minSetValue, minute);
+        toString(secSetValue, second);
 
         function toString(string, time) {
             let timeString = string;
@@ -220,20 +249,30 @@ function countdowntimer() {
                 timeString == "00";
             }
 
-            if (secondset < 10 && minuteset == "") {
+            // Display the minute to 00 only when the timer second have value [Start]
+            if (secSetValue < 10 && minSetValue == "") {
                 minute.textContent = "00";
             }
-            // View [Start]
+            // Display the minute to 00 only when the timer second have value [End]
+
+            // Stops the timer when the timer have ended [Start]
+            if(secSetValue == 0 && minSetValue == 0) {
+                start2 = 0;
+                timer = false;
+            }
+            // Stops the timer when the timer have ended [End]
+
+            // Displays the added 0 into scoreboard [Start]
             time.textContent = timeString;
-            // [End]
+            // Displays the added 0 into scoreboard [End]
         }
-        // [End]
+        // Add number in front when it is lower than 10 [End]
 
-
-        // Loops and limit
-        if(start2 == 0) {
-            timeout = setTimeout(countdowntimer, 1000);
+        // Loops and limit the timer from the buttons [Start]
+        if(start2 == 1) {
+            timeout = setTimeout(countDownTimer, 1000);
         }
+        // Loops and limit the timer from the buttons [End]
     }
 }
-
+// Timer Function [End]

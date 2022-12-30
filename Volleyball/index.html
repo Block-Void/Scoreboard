@@ -152,8 +152,8 @@
                         <!-- Timer Input [Start] -->
                         
                         <div class="timeset">
-                            <input class="minuteset" type="number"></input>
-                            <input class="secondset" type="number"></input>
+                            <input class="minuteset" type="number" maxlength="2" min="0" max="60">
+                            <input class="secondset" type="number" maxlength="2" min="0" max="59">
                         </div>
                         <div id="text">
                             <div class="text">Minute</div>
@@ -187,8 +187,8 @@
                         <!-- Change the Team Name inputted value in home team name input [End] -->
 
                         <div class="buttonhome">
-                            <button class="pointhome homescoreadd">+ 1</button>
-                            <button class="pointhome homescoresubtract">- 1</button>
+                            <button class="pointhome add homescoreadd">+ 1</button>
+                            <button class="pointhome subtract homescoresubtract">- 1</button>
                         </div>
                         <!-- Home Team Change Score [End] -->
 
@@ -197,14 +197,13 @@
                     <div id="pointaway">
 
                         <!-- Away Team Change Score [Start] -->
-                        
                         <!-- Change the Team Name inputted value in away team name input [Start] -->
                         <div class="awayname">Away Team</div>
                         <!-- Change the Team Name inputted value in away team name input [End] -->
 
                         <div class="buttonaway">
-                            <button class="pointaway awayscoreadd">+ 1</button>
-                            <button class="pointaway awayscoresubtract">- 1</button>
+                            <button class="pointaway add awayscoreadd">+ 1</button>
+                            <button class="pointaway subtract awayscoresubtract">- 1</button>
                         </div>
                         <!-- Away Team Change Score [End]-->
 
@@ -215,8 +214,8 @@
 
                         <!-- Change Period [Start] -->
                         <div class="buttonperiod">
-                            <button class="pointperiod periodadd">+ 1</button>
-                            <button class="pointperiod periodsubtract">- 1</button>
+                            <button class="pointperiod add periodadd">+ 1</button>
+                            <button class="pointperiod subtract periodsubtract">- 1</button>
                         </div>
                         <!-- Change Period [End] -->
 
@@ -233,8 +232,8 @@
                             <!-- Change the Team Name inputted value in home team name input [End] -->
 
                             <div class="btnhomeset">
-                                <button class="pointsethome homesetadd">+ 1</button>
-                                <button class="pointsethome homesetsubtract">- 1</button>
+                                <button class="pointsethome add homesetadd">+ 1</button>
+                                <button class="pointsethome subtract homesetsubtract">- 1</button>
                             </div>
                             <!-- Home Team Change Set [Start] -->
 
@@ -249,8 +248,8 @@
                             <!-- Change the Team Name Inputted value in away team name input [End] -->
 
                             <div class="btnawayset">
-                                <button class="pointsetaway awaysetadd">+ 1</button>
-                                <button class="pointsetaway awaysetsubtract">- 1</button>
+                                <button class="pointsetaway add awaysetadd">+ 1</button>
+                                <button class="pointsetaway subtract awaysetsubtract">- 1</button>
                             </div>
                             <!-- Away Team Change Set [End]-->
 

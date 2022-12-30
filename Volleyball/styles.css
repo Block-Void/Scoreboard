@@ -14,15 +14,14 @@
 .scoreboard {
     background-color: rgb(127, 127, 127);
     width: 100%;
-    flex-grow: 1;
 }
 
 /* Bar [Start] */
 .bar {
     display: flex;
-    height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 2px solid black;
-    padding-left: 15px;
     justify-content: center;
     align-items: center;
     color: rgb(195, 195, 195);
@@ -103,7 +102,6 @@
 
 #menu input[type="checkbox"]:checked ~ .menu-items {
     transform: translateX(0);
-
 }
 
 #menu input[type="checkbox"]:checked ~ .menu .line1 {
@@ -191,17 +189,16 @@
 .pointboard {
     background-color: rgb(195, 195, 195);
     width: 200px;
-    min-height: 100%;
     flex-grow: 1;
-    border-left: 2px solid;
+    border-left: 2px solid black;
 }
 
 #above {
-    border-bottom: 2px solid;
-    padding-bottom: 15px;
+    border-bottom: 2px solid black;
 }
+
 #below {
-    padding-bottom: 75px;
+    padding-bottom: 67px;
 }
 
 button, #print {
@@ -221,6 +218,7 @@ button, #print {
 .inputhome, .inputaway {
     border-radius: 15px;
     max-width: 80%;
+    text-align: center;
     border: none;
 }
 /* Input Name [End] */
@@ -237,6 +235,20 @@ button, #print {
     flex-direction: row;
     gap: 25px;
     align-items: center;
+}
+
+.start:hover, .add:hover {
+    background-color: yellowgreen;
+    color: black;
+}
+
+.pause:hover {
+    background-color: orange;
+}
+
+.reset:hover, .subtract:hover {
+    background-color: red;
+    color: white;
 }
 
 #text {
@@ -297,7 +309,7 @@ button, #print {
     padding: 5px 60px;
     text-align: center;
     font-size: 25px;
-    background-color: wsecondte;
+    background-color: white;
 }
 
 /* Pointboard [End] */
