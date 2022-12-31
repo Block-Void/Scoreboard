@@ -3,27 +3,21 @@ let inputHome, inputAway,
     homeName, awayName; 
 
 inputHome = document.querySelector(".inputhome");
-inputHome.addEventListener("keypress", function changeHomeName(event) {
-    inputHome = document.querySelector(".inputhome").value;
+inputHome.addEventListener("change", function() {
     homeName = document.querySelectorAll(".homename");
 
-    if (event.key === "Enter") {
         for(let i = 0; i < homeName.length; i++){
-            homeName[i].innerHTML = inputHome;
+            homeName[i].innerHTML = this.value;
         }
-    }
 });
 
 inputAway = document.querySelector(".inputaway");
-inputAway.addEventListener("keypress", function changeAwayName(event) {
-    inputAway = document.querySelector(".inputaway").value;
+inputAway.addEventListener("change", function() {
     awayName = document.querySelectorAll(".awayname");
-
-    if(event.key === "Enter") {
+    
         for(let i = 0; i < awayName.length; i++){
-            awayName[i].innerHTML = inputAway;
+            awayName[i].innerHTML = this.value;
         }
-    }
 });
 // inputs for home name and away name [End]
 
@@ -127,7 +121,7 @@ document.querySelector(".secondset").addEventListener("change", function(){
     if(time < 0) {
         this.value = 0;
     }
-    if(time > 60) {
+    if(time > 59) {
         this.value = 59;
     }
 });
