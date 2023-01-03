@@ -185,6 +185,7 @@ pause.onclick = function() {
 
 reset = document.querySelector(".reset");
 reset.onclick = function() {
+    timer = true;
     if(confirm("Are you sure this will reset your timer!")){
         if(start2 == 0 || start2 == 1){
             timer = false;
