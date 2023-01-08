@@ -2,6 +2,7 @@
 let inputHome, inputAway, 
     homeName, awayName; 
 
+
 inputHome = document.querySelector(".inputhome");
 inputHome.addEventListener("change", function() {
     homeName = document.querySelectorAll(".homename");
