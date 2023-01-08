@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Volleyball</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="images/volleyball icon.png">
+    </head>
+    <body>
+        <div id="main">
+            <div class="bar">
+                <div class="bar-left">
+                    <img src="Images/volleyball icon.png">
+                    <p class="title">Volleyball</p>
+                </div>
+                <div class="bar-right">
+                    <div>Home</div>
+                    <div class="contact">Contact Us</div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="pointboard">
+                    <div class="point">
+
+                        <div class="teamnamehome">
+                            <input class="inputhome" type="text" placeholder="Home Team Name"></input>
+                        </div>
+                        <!-- Home Team Input Name [End] -->
+
+                        <!-- Away Team Input Name [Start] -->
+                        <div class="teamnameaway">
+                            <input class="inputaway" type="text" placeholder="Away Team Name"></input>
+                        </div>
+
+                        <div id="timeset">
+                            Timer
+
+                            <!-- Timer Input [Start] -->
+                            
+                            <div class="timeset">
+                                <input class="minuteset" type="number" maxlength="2" min="0" max="60" placeholder="Minute">
+                                <input class="secondset" type="number" maxlength="2" min="0" max="59" placeholder="Second">
+                            </div>
+
+                            <!-- Timer Input [End] -->
+
+
+                            <!-- Timer Button [Start] -->
+                            <button class="timerbutton set">Set</button>
+                            <div>
+                                <button class="timerbutton start">Start</button>
+                                <button class="timerbutton pause">Pause</button>
+                                <button class="timerbutton reset">Reset</button>
+                            </div>
+                            <!-- Timer Button [End] -->
+
+                        </div>
+
+                        <div class="button">
+                            <div class="homename">Home Team</div>
+                            <div class="buttonhome">
+                                <button class="pointhome add homescoreadd">+ 1</button>
+                                <button class="pointhome subtract homescoresubtract">- 1</button>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="awayname">Away Team</div>
+                            <div class="buttonaway">
+                                <button class="pointaway add awayscoreadd">+ 1</button>
+                                <button class="pointaway subtract awayscoresubtract">- 1</button>
+                            </div>
+                        </div>
+                        <div class="button">
+                            Period
+                            <div class="buttonperiod">
+                                <button class="pointperiod add periodadd">+ 1</button>
+                                <button class="pointperiod subtract periodsubtract">- 1</button>
+                            </div>
+                        </div>
+                        <div class="button">
+                            Sets
+                            <div>
+                                <div class="homename">Home Team</div>
+                                <div class="btnhomeset">
+                                    <button class="pointsethome add homesetadd">+ 1</button>
+                                    <button class="pointsethome subtract homesetsubtract">- 1</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="awayname">Away Team</div>
+                                <div class="btnawayset">
+                                    <button class="pointsetaway add awaysetadd">+ 1</button>
+                                    <button class="pointsetaway subtract awaysetsubtract">- 1</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scoreboard">
+                    <div class="score">
+                        <div id="top">
+                            <div id="home"><p class="homename">Home Team</p>
+                                <div id="homescore">
+                                    <!-- Home Team Score [Start] -->
+                                    <span class="homescore">
+                                        0
+                                    </span>
+                                    <!-- Home Team Score [End] -->
+
+                                </div>
+                            </div>
+                            
+                            <div id="timer">
+                                Timer
+
+                                <!-- Timer Minute and Second [Start] -->
+                                <div class="time">
+                                    <div class="timer">
+                                        <span class="minute">00</span>:
+                                        <span class="second">00</span>
+                                    </div>
+                                    <!-- Timer Minute and Second [End] -->
+                                </div>
+                            </div>
+
+                            <div id="away"><p class="awayname">Away Team</p>
+                                <div id="awayscore">
+
+                                    <!-- Away Team Score [Start] -->
+                                    <span class="awayscore">
+                                        0
+                                    </span>
+                                    <!-- Away Team Score [End] -->
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="bottom">
+                            <div id="set">
+                                Sets
+                                <!-- Home Score Sets [Start] -->
+                                <span class="homeset">
+                                    0
+                                </span>
+                                <!-- Home Score Sets [End] -->
+                            </div>
+
+                            <div id="period">
+                                Period
+                                <!-- Period [Start] -->
+                                <span class="period">
+                                    0
+                                </span>
+                                <!-- Period [End] -->
+                            </div>
+
+                            <div id="set">
+                                Sets
+                                <!-- Away Score Sets [Start] -->
+                                <span class="awayset">
+                                    0
+                                </span>
+                                <!-- Away Score Sets [End] -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="volleyball.js"></script>
+</html>
