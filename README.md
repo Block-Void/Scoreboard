@@ -7,3 +7,8 @@
 ### Code Changes
  - Website layout code in HTML, and CSS 
  - Fix some bugs in JavaScript file
+ - 
+[inputAway](https://github.com/Block-Void/Scoreboard/blob/c6c5379bc593d0627e13726c759720e54d91ded4/Volleyball/volleyball.js#L20)
+```code
+
+```
