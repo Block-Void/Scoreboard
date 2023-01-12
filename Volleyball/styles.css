@@ -1,648 +1,564 @@
 * {
-    margin: 0px;
-    font-family: Bahnschrift;
-    font-weight: 800;
+    margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #323f5c;
 }
 
 #main {
-    display: flex;
     height: 100vh;
 }
 
-/* Scoreboard [Start] */
-.scoreboard {
-    background-color: rgb(127, 127, 127);
-    display: flex;
-    width: 100%;
+#timeset input::-webkit-outer-spin-button,
+#timeset input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
-.left {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-/* Bar [Start] */
 .bar {
     display: flex;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid black;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    color: rgb(195, 195, 195);
-    font-size: 50px;
-}
-/* Bar [End] */
-
-/* Home Team, Timer, Away Team [Start] */
-
-.score {
-    display: flex;
-    flex-direction: column;
-}
-
-#home, #timer, #away {
-    display: flex;
-    color: rgb(195, 195, 195);
-    padding: 15px;
-    font-size: 50px;
-    text-align: center;
-}
-
-#timer {
-    display:block;
-}
-
-.homescore, .awayscore, 
-.time {
-    color: black;
-    font-size: 100px;
-    background-color:rgb(195, 195, 195);
-    border-radius: 15px;
-    text-align: center;
-    font-size: 100px;
-}
-
-#top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(195, 195, 195);
-    gap: 30px;
-    text-align: center;
-    font-size: 50px;
-    padding: 15px;
-}
-
-#home, #away {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.homescore, .awayscore {
-    color: rgb(195, 195, 195);
-    text-align: center;
-    font-size: 50px;
-    padding: 20px 10px;
-}
-
-.timer {
-    box-sizing: border-box;
-    display: flex;
-    padding: 20px 80px;
-    text-size-adjust: none;
-}
-/* Home Team, Timer, Away Team [End] */
-
-
-/* Home Sets, Period, Away Sets [Start] */
-#bottom {
-    display: flex;
-    justify-content: center;
-    gap: 120px;
-    padding: 15px;
-}
-
-#set, #period {
-    color: rgb(195, 195, 195);
-    font-size: 60px;
-    text-align: center;
-}
-
-.homeset, .awayset, 
-.period {
-    display: flex;
-    padding: 10px 85px;
-    color: black;
-    font-size: 100px;
-    background-color: rgb(195, 195, 195);
-    border-radius: 15px;
-    font-size: 100px;
-    text-align: center;
-}
-/* Home Sets, Period, Away Sets [End] */
-/* Scoreboard [End] */
-
-
-/* Pointboard [Start] */
-.pointboard {
-    background-color: rgb(195, 195, 195);
-    width: 100px;
-    flex-grow: 1;
-    border-left: 2px solid black;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-#above {
-    border-bottom: 2px solid black;
-}
-
-#below {
-    padding-top: 20px;
-}
-
-button, #print {
-    cursor: pointer;
-}
-
-/* Input Name [Start] */
-.teamnamehome, .teamnameaway,
-#timeset, #pointhome, 
-#pointaway, #pointperiod,
-#sets {
-    padding: 5px;
-    text-align: center;
-    font-size: 25px;
-}
-
-#sets {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-.inputhome, .inputaway {
-    border-radius: 15px;
-    max-width: 80%;
-    text-align: center;
-    border: none;
-}
-/* Input Name [End] */
-
-#timeset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-}
-
-.timeset {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    align-items: center;
-}
-
-.start:hover, .add:hover {
-    background-color: yellowgreen;
-    color: black;
-}
-
-.pause:hover {
-    background-color: orange;
-}
-
-.reset:hover, .subtract:hover {
-    background-color: red;
+    padding: 15px 65px;
+    background-color: #415a77;
     color: white;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.281);
 }
 
-#text {
+.bar-left {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 15px;
 }
 
-.text {
+.bar img {
+    width: 35px;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.bar-right {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 25px;
     font-size: 15px;
 }
 
-.minuteset, .secondset {
-    width: 40px;
-    border-radius: 5px;
-    border: 2px solid;
+.contact {
+    background-color: #0088a9;
+    padding: 8px 20px;
+    border-radius: 20px
 }
 
-.timerbutton {
-    max-width: 40%;
+.main {
+    display: flex;
+    margin: 35px;
+}
+
+.pointboard {
+    background-color: #598392;
+    padding: 15px;
+    border: 2px solid;
     border-radius: 5px;
-    font-size: 12px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.281);
+    z-index: 2;
+}
+
+p {
+    font-weight: 800;
+}
+
+.point {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    background-color: #e26d5c;
+    padding: 90px 0px;
+    border: 2px solid;
+    border-radius: 15px;
+    box-shadow: 5px 3px rgba(0, 0, 0, 0.281);
+}
+
+input {
+    width: 80px;
+    text-align: center;
+}
+
+.teamname input {
+    width: 150px;
+}
+
+button {
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+
+.timeset {
+    padding-bottom: 5px;
+}
+
+.set {
+    margin-bottom: 5px;
+    width: 70px
+}
+
+.lines {
+    width: 200px;
+    border-bottom: 2px solid;
+}
+
+.scoreboard {
+    background-color: #d9d9d9;
+    border-radius: 3px;
+    color: white;
+    padding: 15px;
+    box-shadow: 5px 6px rgba(0, 0, 0, 0.281);
+}
+
+.score {
+    background-color: #001427;
+    font-size: 50px;
+    border: 3px solid #ff4500;
+    border-radius: 15px;
+    padding: 113px 75px;
+}
+
+#top, #bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    padding: 15px;
+}
+
+#home, #timer, #away {
+    padding: 15px;
+}
+
+#home, #away,
+#set, #period {
+    display: flex;
+    flex-direction: column;
 }
 
 .button {
     display: flex;
-    gap: 5px;
-    text-align: center;
-}
-
-#pointhome, #pointaway, 
-#pointperiod, #homeset, 
-#awayset {
-    display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.pointhome, .pointaway, 
-.pointperiod, .pointsethome,
-.pointsetaway {
-    max-width: 100%;
-    border-radius: 5px;
+#awayscore, #homescore, #set,
+#period, .timer {
+    width: 250px;
 }
 
-.buttonhome, .buttonaway, 
-.buttonperiod, .btnhomeset,
-.btnawayset {
+.timer {
     display: flex;
     justify-content: center;
-    gap: 15px;
 }
 
-#homeset, #awayset {
-    font-size: 15px;
-    text-align: center;
+.buttonhome, .buttonaway, .buttonperiod,
+.btnhomeset, .btnawayset {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
 }
 
-#print {
-    border-top: 2px solid;
-    padding: 5px 60px;
-    text-align: center;
-    font-size: 25px;
-    background-color: white;
+.homescore, .timer, .awayscore,
+.homeset, .period, .awayset {
+    font-family: Bahnschrift;
+    font-size: 70px;
+    background-color: #ff4500;
 }
 
-/* Pointboard [End] */
-@media screen and (min-width: 1366px) {
-    .homeset, .awayset, 
-    .period {
-    color: black;
-    font-size: 100px;
-    background-color: rgb(195, 195, 195);
-    border-radius: 15px;
-    text-align: center;
-    }
-
-    .homescore, .awayscore, 
-    .timer {
-        color: black;
-        font-size: 100px;
-        background-color:rgb(195, 195, 195);
-        border-radius: 15px;
-        text-align: center;
-    }
-
-    .homescore, .awayscore {
-        padding: 10px 90px;
-    }
-
-    .left {
-        width: 100%;
-    }
-
-    .score {
-        margin-top: 40px;
-    }
-
-    .pointboard {
-        background-color: rgb(195, 195, 195);
-        width: 200px;
-        flex-grow: 1;
-        border-left: 2px solid black;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    #below {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    #home, #away {
-        max-width: 555px;
-    }
-
-    #home, #timer, #away {
-        color: rgb(195, 195, 195);
-        padding: 15px 5px;
-        font-size: 60px;
-        text-align: center;
-    }
-
-    #set, #period {
-        color: rgb(195, 195, 195);
-        font-size: 60px;
-        text-align: center;
-    }
-}
 
 @media screen and (min-width: 1600px) {
-    /* Inside the box [Start] */
-    .homeset, .awayset, 
-    .period {
-    color: black;
-    font-size: 150px;
-    padding: 0px 100px;
-    background-color: rgb(195, 195, 195);
-    border-radius: 15px;
-    text-align: center;
-    }
+/* IN BAR */
+.bar {
+    padding: 15px 85px; /* 15px 65px */
+}
+  
+.bar-left {
+    gap: 20px; /* 15px */
+}
+  
+.bar img {
+    width: 43px; /* 35px */
+}
+  
+.bar-right {
+    gap: 30px; /* 25px */
+    font-size: 20px; /* 15px */
+}
+  
+.title {
+    font-size: 23px; /* 18px */
+}
+  
+.main {
+    margin: 40px; /* 35px */
+}
+  
+.contact {
+    padding: 9px 30px; /* 8px 20px */
+    border-radius: 35px; /* 20px */
+}
+  
+  
+  
+/* IN POINTBOARD */
+.pointboard {
+    border: 3px solid; /* 2px */
+    padding: 20px; /* 15px */
+    border-radius: 8px; /* 5px */
+}
+  
+.point {
+    width: 257px;
+    padding: 110px 0px; /* 90px */
+    border: 3px solid; /* 2px */
+    gap: 8px; /* 5px */
+    border-radius: 20px; /* 15px */
+}
 
-    .homescore, .awayscore, 
-    .timer {
-        color: black;
-        font-size: 150px;
-        background-color:rgb(195, 195, 195);
-        border-radius: 15px;
-        text-align: center;
-    }
-    /* Inside the box [End] */
+.lines {
+    width: 254px; /* 200px */
+    border-bottom: 3px solid; /* 2px */
+}
 
-    /* Names above on number inside the box [Start] */
-    #home, #timer, #away {
-        color: rgb(195, 195, 195);
-        padding: 15px 5px;
-        font-size: 70px;
-        text-align: center;
-    }
+.teamname input {
+    width: 180px; /* 150px */
+}
+  
+input {
+    font-size: 16px;
+    height: 25px;
+    width: 90px; /* 80px */
+}
 
-    #set, #period {
-        color: rgb(195, 195, 195);
-        font-size: 70px;
-        text-align: center;
-    }
-    /* Names above on number inside the box [End]  */
+button {
+    border: 3px solid;
+    font-size: 16px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 1000;
+}
+  
+.timeset {
+    padding-bottom: 8px; /* 5px */
+}
+
+.set {
+    margin-bottom: 10px; /* 5px */
+    width: 100px; /* 70px */
+}
 
 
-    .left {
-        width: 90%;
-    }
+  
+/* IN SCOREBOARD */
+.scoreboard {
+    border-radius: 6px; /* 3px */
+    padding: 20px; /* 15px */
+}
+  
+.score {
+    font-size: 55px; /* 50px */
+    border: 4px solid #ff4500; /* 3px */
+    border-radius: 17px; /* 15px */
+    padding: 160px 100px; /* 113px 75px */
+}
 
-    .score {
-        margin-top: 50px;
-    }
+#top, #bottom {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px; /* 15px */
+}
+  
+#top {
+    align-items: center;
+    justify-content: space-around;
+}
 
-    /* Pointboard [Start] */
-    .pointboard {
-        border-left: 3px solid black;
-    }
-    /* Pointboard [End] */
-
-    /* Names in the top of inputs or buttons [Start] */
-    #timeset, #pointhome, 
-    #pointaway, #pointperiod, 
-    #sets, .teamnamehome, 
-    .teamnameaway {
-        font-size: 30px;
-    }
-    /* Names in the top of inputs or buttons [End] */
-
-    /* Lengthens the size of horizontal of team name input [Start] */
-    .inputhome, .inputaway {
-        height: 20px;
-        width: 400px;
-    }
-    /* Lengthens the size of horizontal of team name input [End] */
-
-    /* Inside the timer [Start] */
-    .timeset {
-        gap: 35px;
-    }
-
-    .minuteset, .secondset {
-        font-size: 20px;
-        border: 3px solid black;
-        width: 55px;
-    }
-
-    .text {
-        font-size: 20px;
-    }
-    /* Inside the timer [End] */
-
-    /* Change the size of a button [Start] */
-    .timerbutton, .add, .subtract {
-        border: 3px solid black;
-        font-size: 15px;
-        border-radius: 4px;
-    }
-    /* Change the size of a button [End] */
+.homename, .awayname {
+    width: 269px;
+}
+  
+#away, #home {
+    width: 277.4px; /* 274.2px */
+}
+  
+.homescore, .timer, .awayscore, 
+.homeset, .period, .awayset {
+    font-size: 90px; /* 70px */
+}
 }
 
 @media screen and (min-width: 1920px) {
-    /* Inside the box [Start] */
-    .homeset, .awayset, 
-    .period {
-    padding: 10px 80px;
-    font-size: 200px;
-    }
+/* IN BAR */
+.bar {
+    padding: 19px 95px; /* 15px 65px */
+}
+  
+.bar-left {
+    gap: 20px; /* 15px */
+}
+  
+.bar img {
+    width: 50px; /* 35px */
+}
+  
+.bar-right {
+    gap: 30px; /* 25px */
+    font-size: 25px; /* 15px */
+}
+  
+.title {
+    font-size: 27px; /* 18px */
+}
+  
+.main {
+    margin: 40px; /* 35px */
+}
+  
+.contact {
+    padding: 9px 35px; /* 8px 20px */
+    border-radius: 35px; /* 20px */
+}
+  
+  
+  
+/* IN POINTBOARD */
+.pointboard {
+    border: 3px solid; /* 2px */
+    padding: 20px; /* 15px */
+    border-radius: 8px; /* 5px */
+}
+  
+.point {
+    width: 323px;
+    padding: 180px 0px; /* 90px */
+    border: 3px solid; /* 2px */
+    gap: 8px; /* 5px */
+    border-radius: 27px; /* 15px */
+}
 
-    .timer {
-        padding: 0px 15px;
-        font-size: 195px;
-    }
+.lines {
+    width: 320px; /* 200px */
+    border-bottom: 3px solid; /* 2px */
+}
 
-    .homescore, .awayscore {
-        padding: 20px 90px;
-        font-size: 200px;
-    }
-    /* Inside the box [End] */
+.teamname input {
+    width: 200px; /* 150px */
+}
+  
+input {
+    font-size: 19px;
+    height: 28px;
+    width: 90px; /* 80px */
+}
 
-    /* Names above on number inside the box [Start] */
-    #home, #timer, #away {
-        padding: 10px 5px;
-        font-size: 70px;
-        text-align: center;
-    }
+button {
+    height: 30px;
+    border: 3px solid;
+    font-size: 19px;
+}
 
-    #set, #period {
-        color: rgb(195, 195, 195);
-        font-size: 90px;
-        text-align: center;
-    }
-    /* Names above on number inside the box [End]  */
+p {
+    font-size: 21px;
+    font-weight: 1000;
+}
+  
+.timeset {
+    padding-bottom: 8px; /* 5px */
+}
 
+.set {
+    margin-bottom: 10px; /* 5px */
+    width: 100px; /* 70px */
+}
 
-    .left {
-        width: 85%;
-    }
+  
+  
+/* IN SCOREBOARD */
+.scoreboard {
+    border-radius: 6px; /* 3px */
+    padding: 20px; /* 15px */
+}
+  
+.score {
+    font-size: 55px; /* 50px */
+    border: 4px solid #ff4500; /* 3px */
+    border-radius: 17px; /* 15px */
+    padding: 200px 75px; /* 113px 75px */
+}
 
-    .score {
-        margin-top: 65px;
-    }
+#top, #bottom {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 18px; /* 15px */
+}
+  
+#top {
+    align-items: center;
+    justify-content: space-evenly;
+}
 
-    .bar {
-        border-bottom: 4px solid black;
-    }
+.homename, .awayname {
+    width: 269px;
+}
+  
+#away, #home {
+    width: 365.4px; /* 274.2px */
+}
 
-    /* Pointboard [Start] */
-    .pointboard {
-        border-left: 4px solid black;
-    }
-    /* Pointboard [End] */
-
-    /* Names in the top of inputs or buttons [Start] */
-    #timeset, #pointhome, 
-    #pointaway, #pointperiod, 
-    #sets, .teamnamehome, 
-    .teamnameaway {
-        font-size: 35px;
-    }
-    /* Names in the top of inputs or buttons [End] */
-
-    /* Lengthens the size of horizontal of team name input [Start] */
-    .inputhome, .inputaway {
-        font-size: 25px;
-        height: 25px;
-        width: 600px;
-    }
-    /* Legnthens the size of horizontal of team name input [End] */
-
-    /* Inside the timer [Start] */
-    .timeset {
-        gap: 55px;
-    }
-
-    .minuteset, .secondset {
-        width: 55px;
-        height: 28px;
-    }
-
-    .text {
-        font-size: 25px;
-    }
-    /* Inside the timer [End] */
-
-    /* Change the size of a button [Start] */
-    .timerbutton {
-        border-radius: 5px;
-        font-size: 20px;
-        height: 30px;
-        width: 70px
-    }
-
-    .add, .subtract {
-        border-radius: 5px;
-        font-size: 20px;
-        height: 30px;
-        width: 45px
-    }
-
-    /* Change the size of a button [End] */
-
-    .pointboard #sets .homename, .pointboard #sets .awayname {
-        font-size: 23px;
-    }
-
-    #print {
-        border-top: 4px solid black;
-        font-size: 40px;
-    }
+#awayscore, #homescore, #set,
+#period, .timer {
+    width: 350px;
+}
+  
+.homescore, .timer, .awayscore, 
+.homeset, .period, .awayset {
+    text-align: center;
+    font-size: 130px; /* 70px */
+}
 }
 
 @media screen and (min-width: 2560px) {
-    /* Inside the box [Start] */
-    .homeset, .awayset, 
-    .period {
-    font-size: 300px;
-    }
-
-    .homescore, .awayscore, 
-    .timer {
-        font-size: 300px;
-    }
-    /* Inside the box [End] */
-
-    /* Names above on number inside the box [Start] */
-    #home, #timer, #away {
-        padding: 10px 5px;
-        font-size: 100px;
-        text-align: center;
-    }
-
-    #set, #period {
-        color: rgb(195, 195, 195);
-        font-size: 90px;
-        text-align: center;
-    }
-    /* Names above on number inside the box [End]  */
-
-
-    .left {
-        width: 85%;
-    }
-
-    .score {
-        margin-top: 85px;
-    }
-
-    .bar {
-        border-bottom: 5px solid black;
-    }
-
-    /* Pointboard [Start] */
-    .pointboard {
-        border-left: 5px solid black;
-    }
-    /* Pointboard [End] */
-
-    /* Names in the top of inputs or buttons [Start] */
-    #timeset, #pointhome, 
-    #pointaway, #pointperiod, 
-    #sets, .teamnamehome, 
-    .teamnameaway {
-        font-size: 55px;
-    }
-    /* Names in the top of inputs or buttons [End] */
-
-    /* Lengthens the size of horizontal of team name input [Start] */
-    .inputhome, .inputaway {
-        font-size: 25px;
-        height: 35px;
-        width: 600px;
-    }
-    /* Legnthens the size of horizontal of team name input [End] */
-
-    /* Inside the timer [Start] */
-    .timeset {
-        gap: 55px;
-    }
-
-    .minuteset, .secondset {
-        width: 75px;
-        height: 38px;
-        border-radius: 8px;
-        font-size: 24px;
-        border: 5px solid black;
-    }
-
-    .text {
-        font-size: 35px;
-    }
-    /* Inside the timer [End] */
-
-    /* Change the size of a button [Start] */
-
-    .timerbutton, .add, .subtract {
-        border: 5px solid black;
-    }
-
-    .timerbutton {
-        border-radius: 7px;
-        font-size: 30px;
-        height: 40px;
-        width: 100px
-    }
-
-    .add, .subtract {
-        border-radius: 7px;
-        font-size: 25px;
-        height: 40px;
-        width: 65px
-    }
-    /* Change the size of a button [End] */
-
-    .pointboard #sets .homename, .pointboard #sets .awayname {
-        font-size: 33px;
-    }
-
-    #print {
-        border-top: 5px solid black;
-        font-size: 40px;
-    }
+/* IN BAR */
+.bar {
+    padding: 19px 95px; /* 15px 65px */
+}
+    
+.bar-left {
+    gap: 20px; /* 15px */
+}
+    
+.bar img {
+    width: 50px; /* 35px */
+}
+    
+.bar-right {
+    gap: 30px; /* 25px */
+    font-size: 25px; /* 15px */
+}
+    
+.title {
+    font-size: 27px; /* 18px */
+}
+    
+.main {
+    margin: 55px; /* 35px */
+}
+    
+.contact {
+    padding: 9px 35px; /* 8px 20px */
+    border-radius: 35px; /* 20px */
+}
+    
+    
+    
+/* IN POINTBOARD */
+.pointboard {
+    border: 5px solid; /* 2px */
+    padding: 25px; /* 15px */
+    border-radius: 10px; /* 5px */
+}
+    
+.point {
+    width: 455px;
+    padding: 180px 0px; /* 90px */
+    border: 4px solid; /* 2px */
+    gap: 8px; /* 5px */
+    border-radius: 27px; /* 15px */
+}
+  
+.lines {
+    width: 450px; /* 200px */
+    border-bottom: 4px solid; /* 2px */
+}
+  
+.teamname input {
+    width: 260px; /* 150px */
+}
+    
+input {
+    font-size: 25px;
+    height: 36px;
+    width: 120px; /* 80px */
+}
+  
+button {
+    height: 40px;
+    border: 4px solid;
+    font-size: 25px;
+}
+  
+p {
+    font-size: 30px;
+    font-weight: 1000;
+}
+    
+.timeset {
+    padding-bottom: 8px; /* 5px */
+}
+  
+.set {
+    margin-bottom: 10px; /* 5px */
+    width: 120px; /* 70px */
+}
+  
+    
+    
+/* IN SCOREBOARD */
+.scoreboard {
+    border-radius: 6px; /* 3px */
+    padding: 30px; /* 15px */
+}
+    
+.score {
+    font-size: 55px; /* 50px */
+    border: 6px solid #ff4500; /* 3px */
+    border-radius: 17px; /* 15px */
+    padding: 200px 10px; /* 113px 75px */
+}
+  
+#top, #bottom {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 18px; /* 15px */
+}
+    
+#top {
+    align-items: center;
+    justify-content: space-around;
+}
+  
+.homename, .awayname {
+    width: 269px;
+}
+    
+#away, #home {
+    width: 540.4px; /* 274.2px */
+}
+  
+#awayscore, #homescore, #set,
+#period, .timer {
+    width: 550px;
+}
+    
+.homescore, .timer, .awayscore, 
+.homeset, .period, .awayset {
+    text-align: center;
+    font-size: 200px; /* 70px */
+}
 }
