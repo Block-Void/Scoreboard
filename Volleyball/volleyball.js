@@ -6,19 +6,29 @@ let inputHome, inputAway,
 inputHome = document.querySelector(".inputhome");
 inputHome.addEventListener("change", function() {
     homeName = document.querySelectorAll(".homename");
-
+    if(homeName.value != ""){
         for(let i = 0; i < homeName.length; i++){
             homeName[i].innerHTML = this.value;
         }
+    } else {
+        for(let i = 0; i < homeName.length; i++){
+            homeName[i].innerHTML = "Home Team";
+        }
+    }
 });
 
 inputAway = document.querySelector(".inputaway");
 inputAway.addEventListener("change", function() {
     awayName = document.querySelectorAll(".awayname");
-    
+    if(awayName.value != "") {
         for(let i = 0; i < awayName.length; i++){
             awayName[i].innerHTML = this.value;
         }
+    } else {
+        for(let i = 0; i < awayName.length; i++){
+            awayName[i].innerHTML = "Away Team";
+        }
+    }
 });
 // inputs for home name and away name [End]
 
@@ -93,10 +103,9 @@ periodSubtract.onclick = function() {
 }
 
 function subtract(subtract) {
-    if (toNum > 0) {
-        toNum = Number(subtract.innerHTML) - 1;
-        subtract.innerHTML = String(toNum);
-    } else {
+    toNum = Number(subtract.innerHTML) - 1;
+    subtract.innerHTML = String(toNum);
+    if (toNum < 0) {
         subtract.innerHTML = "0";
     }
 }
@@ -129,6 +138,12 @@ document.querySelector(".secondset").addEventListener("change", function(){
 
 let set = document.querySelector(".set");
 set.onclick = function() {
+    if(minuteSet.value === undefined) {
+        minuteSet.value == "00";
+    }
+    if(secondSet.value === undefined) {
+        secondSet.value = "00";
+    }
     if(start2 == 0 && timer == false) {
         minSetValue = minuteSet.value;
         secSetValue = secondSet.value;
