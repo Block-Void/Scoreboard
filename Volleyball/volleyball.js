@@ -6,11 +6,13 @@ let inputHome, inputAway,
 inputHome = document.querySelector(".inputhome");
 inputHome.addEventListener("change", function() {
     homeName = document.querySelectorAll(".homename");
-    if(homeName.value != ""){
-        for(let i = 0; i < homeName.length; i++){
-            homeName[i].innerHTML = this.value;
-        }
-    } else {
+    inputHomeValue = inputHome.value;
+
+    for(let i = 0; i < homeName.length; i++){
+        homeName[i].innerHTML = this.value;
+    }
+
+    if(inputHomeValue.length == 0) {
         for(let i = 0; i < homeName.length; i++){
             homeName[i].innerHTML = "Home Team";
         }
@@ -20,11 +22,12 @@ inputHome.addEventListener("change", function() {
 inputAway = document.querySelector(".inputaway");
 inputAway.addEventListener("change", function() {
     awayName = document.querySelectorAll(".awayname");
-    if(awayName.value != "") {
-        for(let i = 0; i < awayName.length; i++){
-            awayName[i].innerHTML = this.value;
-        }
-    } else {
+    inputAwayValue = inputAway.value;
+
+    for(let i = 0; i < awayName.length; i++){
+        awayName[i].innerHTML = this.value;
+    }
+    if(inputAwayValue.length == 0) {
         for(let i = 0; i < awayName.length; i++){
             awayName[i].innerHTML = "Away Team";
         }
@@ -68,7 +71,6 @@ periodAdd.onclick = function() {
     add(period);
 }
 function add(add){
-
     toNum = Number(add.textContent) + 1;
     add.innerHTML = String(toNum);
 }
@@ -116,38 +118,55 @@ let minuteSet, secondSet, minSetValue, secSetValue;
 minuteSet = document.querySelector(".minuteset");
 secondSet = document.querySelector(".secondset");
 
-document.querySelector(".minuteset").addEventListener("change", function(){
+
+inputMinute = document.querySelector(".minuteset").addEventListener("change", function(){
     let time = parseInt(this.value);
+    inputMinuteValue = minuteSet.value;
+
     if(time < 0) {
         this.value = 0;
     }
     if(time > 60) {
         this.value = 60;
     }
+
+    if(inputMinuteValue.length == 0) {
+        this.value = 0;
+    }
 });
 
-document.querySelector(".secondset").addEventListener("change", function(){
+inputSecond = document.querySelector(".secondset").addEventListener("change", function(){
     let time = parseInt(this.value);
+    inputSecondValue = secondSet.value;
+
     if(time < 0) {
         this.value = 0;
     }
     if(time > 59) {
         this.value = 59;
     }
+
+    if(inputSecondValue.length == 0) {
+        this.value = 0;
+    }
 });
 
 let set = document.querySelector(".set");
 set.onclick = function() {
-    if(minuteSet.value === undefined) {
-        minuteSet.value == "00";
+    minSetValue = minuteSet.value;
+    secSetValue = secondSet.value;
+    if(minSetValue.length = 0) {
+        minute.textContent = "00";
+        minuteSet.value = 0;
     }
-    if(secondSet.value === undefined) {
-        secondSet.value = "00";
+
+    if(secSetValue.length = 0) {
+        second.textContent = "00";
+        secondSet.value = 0;
     }
+    
     if(start2 == 0 && timer == false) {
-        minSetValue = minuteSet.value;
-        secSetValue = secondSet.value;
-        
+
         if(minSetValue < 10) {
             minute.textContent = String("0" + minSetValue);
             if(minSetValue == "") {
@@ -180,12 +199,18 @@ start2 = 0;
 
 start = document.querySelector(".start");
 start.onclick = function() {
-    if(start2 == 0){
-        start2 = 1;
-        timer = true;
-	    countDownTimer();
+    if(minSetValue.length == 0 && secSetValue.length == 0) {
+        minute.textContent = "00";
+        second.textContent = "00";
+        start2 = 0;
     } else {
-        timer = true;
+        if(start2 == 0){
+            start2 = 1;
+            timer = true;
+            countDownTimer();
+        } else {
+            timer = true;
+        }
     }
 }
 
